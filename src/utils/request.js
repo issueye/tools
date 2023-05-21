@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { ElMessage } from 'element-plus'
 
 const service = axios.create({
     timeout: 5000
@@ -28,7 +29,15 @@ service.interceptors.response.use(
         }
     },
     (error) => {
-        console.log(error);
+        // 拦截处理错误情况
+        console.log('response', error);
+        if (error.code == "ERR_BAD_REQUEST") {
+            ElMessage({
+                type: 'error',
+                message: error.response.data.message,
+            })
+        }
+
         return Promise.reject();
     }
 );

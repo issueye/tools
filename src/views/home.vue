@@ -1,51 +1,58 @@
 <template>
-<div class="home-warp">
-    <el-container>
-        <el-header>
-            <div class="header-title">日志采集工具</div>
-            <!-- 用户名下拉菜单 -->
-            <div class="user-name">
-                <el-dropdown trigger="click" @command="handleCommand">
-                <span class="el-dropdown-link">
-                    admin
-                </span>
-                <template #dropdown>
-                    <el-dropdown-menu>
-                        <el-dropdown-item divided command="loginout">退出登录</el-dropdown-item>
-                    </el-dropdown-menu>
-                </template>
-            </el-dropdown>
-            </div>
-        </el-header>
-        <el-container class="main-container">
-            <el-aside width="202px" class="sidebar">
-                <el-menu :router='true' default-active="2" class="el-menu-vertical-demo" background-color="#b0d5df" text-color="#4c1f24" active-text-color="#ccccd6">
-                    <el-submenu index="1">
-                        <el-menu-item index="/param">
-                            <i class="el-icon-menu"></i>
-                            <template #title>
-                                参数设置
-                            </template>
-                        </el-menu-item>
-                        <el-menu-item index="/log">
-                            <i class="el-icon-menu"></i>
-                            <template #title>
-                                日志跟踪
-                            </template>
-                        </el-menu-item>
-                    </el-submenu>
-                </el-menu>
-            </el-aside>
-            <el-main class="content-box">
-                <router-view v-slot="{ Component }">
-                    <keep-alive>
-                        <component :is="Component"></component>
-                    </keep-alive>
-                </router-view>
-            </el-main>
+    <div class="home-warp">
+        <el-container>
+            <el-header>
+                <div class="header-title">日志采集工具</div>
+                <!-- 用户名下拉菜单 -->
+                <div class="user-name">
+                    <el-dropdown trigger="click" @command="handleCommand">
+                        <span class="el-dropdown-link">
+                            admin
+                        </span>
+                        <template #dropdown>
+                            <el-dropdown-menu>
+                                <el-dropdown-item divided command="loginout">退出登录</el-dropdown-item>
+                            </el-dropdown-menu>
+                        </template>
+                    </el-dropdown>
+                </div>
+            </el-header>
+            <el-container class="main-container">
+                <el-aside width="202px" class="sidebar">
+                    <el-menu :router='true' default-active="2" class="el-menu-vertical-demo" background-color="#b0d5df"
+                        text-color="#4c1f24" active-text-color="#ccccd6">
+                        <el-submenu index="1">
+                            <el-menu-item index="/param">
+                                <i class="el-icon-menu"></i>
+                                <template #title>
+                                    参数设置
+                                </template>
+                            </el-menu-item>
+                            <el-menu-item index="/monitor">
+                                <i class="el-icon-menu"></i>
+                                <template #title>
+                                    采集管理
+                                </template>
+                            </el-menu-item>
+                            <el-menu-item index="/log">
+                                <i class="el-icon-menu"></i>
+                                <template #title>
+                                    日志跟踪
+                                </template>
+                            </el-menu-item>
+                        </el-submenu>
+                    </el-menu>
+                </el-aside>
+                <el-main class="content-box">
+                    <router-view v-slot="{ Component }">
+                        <keep-alive>
+                            <component :is="Component"></component>
+                        </keep-alive>
+                    </router-view>
+                </el-main>
+            </el-container>
         </el-container>
-    </el-container>
-</div>
+    </div>
 </template>
 
 <script setup name="home">
@@ -73,19 +80,19 @@ const handleCommand = (e) => {
 }
 
 .el-menu-item.is-active {
-    background-color: #158bb8 !important;
+    background-color: #5cb3cc !important;
 }
 
-.user-name{
+.user-name {
     display: flex;
     align-items: center;
 }
 
-.el-dropdown-link{
+.el-dropdown-link {
     color: #fff;
-	cursor: pointer;
-	display: flex;
-	align-items: center;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
 }
 
 .content-box {
@@ -99,7 +106,7 @@ const handleCommand = (e) => {
 }
 
 .el-header {
-    background-color: #2775b6;
+    background-color: #1a94bc;
     display: flex;
     justify-content: space-between;
 
