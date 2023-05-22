@@ -34,12 +34,6 @@
                                     采集管理
                                 </template>
                             </el-menu-item>
-                            <el-menu-item index="/log">
-                                <i class="el-icon-menu"></i>
-                                <template #title>
-                                    日志跟踪
-                                </template>
-                            </el-menu-item>
                         </el-submenu>
                     </el-menu>
                 </el-aside>

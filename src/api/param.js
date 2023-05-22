@@ -7,3 +7,11 @@ export const apiParamList = (params) => {
         params: params,
     })
 }
+
+export const apiParamModify = (params) => {
+    return request({
+        url: 'api/v1/param',
+        method: 'put',
+        params: params,
+    })
+}

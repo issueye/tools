@@ -1,7 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/home.vue'
 import Param from '../views/param/index.vue'
-import Log from '../views/log/index.vue'
 import Monitor from '../views/monitor/index.vue'
 import Login from '../views/login.vue'
 
@@ -22,13 +21,6 @@ const routes = [
                     title: '参数管理'
                 },
                 component: Param,
-            }, {
-                path: '/log',
-                name: 'log',
-                meta: {
-                    title: '日志采集'
-                },
-                component: Log,
             }, {
                 path: '/monitor',
                 name: 'monitor',
